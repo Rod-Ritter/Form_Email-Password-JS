@@ -1,0 +1,252 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f5f4f4;
+}
+
+a {
+  text-decoration: none;
+}
+
+.form-main-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+  background: #fff;
+}
+
+h1 {
+  font-size: 2rem;
+  color: #444;
+  padding: 2rem 2rem 1rem 3rem;
+}
+
+.separator {
+  border: 0.02rem solid #ddd;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.form-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 3rem;
+}
+
+.form-container {
+  border: 0.02rem solid #ddd;
+  max-width: 700px;
+  width: 100%;
+  background:#fff;
+  padding: 2rem 2rem 2rem 2rem;
+  border-radius: 10px;
+  margin: 8rem 0;
+}
+
+.form-title {
+  font-size: 3rem;
+  color: #444;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.2rem;
+}
+
+label {
+  margin-bottom: 0.4rem;
+  font-size: 1.1rem;
+  color: #666;
+}
+
+input {
+  border: 1px solid #ddd;
+  padding: 0.8rem 0.5rem;
+  outline: none;
+  border-radius: 5px;
+}
+
+input::placeholder {
+  color: #999;
+}
+
+input:focus {
+  border-color: rgb(15, 6, 93);
+}
+
+.form-button-container {
+  display: flex;
+}
+
+.email-message {
+  color: red;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.email-valid {
+  border-color: green !important;
+}
+
+.form-email {
+  position: relative;
+}
+
+.form-email::after {
+  position: absolute;
+  content: "\2713";
+  color: green;
+  font-size: 1.4rem;
+  bottom: 9px;
+  right: 9px;
+  animation: pulse 0.3s ease-in-out alternate;
+}
+
+.form-password-hide {
+  position: relative;
+} 
+
+.regular-eye {
+  position: absolute;
+  font-size: 1.3rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  bottom: 11px;
+  right: 10px;
+  color: #bbb;
+  z-index: 2;
+  transition: 0.2s;
+} 
+
+.slash-eye {
+  position: absolute;
+  font-size: 1.3rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  bottom: 11px;
+  right: 8.7px;
+  color: #bbb;
+  z-index: 2;
+  transition: 0.2s;
+} 
+
+.regular-eye-valid {
+  position: absolute;
+  font-size: 1.3rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  bottom: 11px;
+  right: 32.3px;
+  color: #bbb;
+  z-index: 2;
+} 
+
+.slash-eye-valid {
+  position: absolute;
+  font-size: 1.3rem;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 100;
+  bottom: 11px;
+  right: 31px;
+  color: #bbb;
+  z-index: 2;
+}
+
+.eye-container:hover {
+  cursor: pointer;
+}
+
+.eye-none {
+  display: none;
+}
+
+.password-message-none {
+  display: none;
+}
+
+.password-message {
+  color: red;
+  margin-top: -0.8rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.password-valid {
+  border-color: green !important;
+}
+
+.form-password {
+  position: relative;
+}
+
+.form-password::after {
+  position: absolute;
+  content: "\2713";
+  color: green;
+  font-size: 1.4rem;
+  bottom: 27px;
+  right: 9px;
+  animation: pulse 0.3s ease-in-out alternate;
+}
+
+.btn-primary {
+  margin-top: 1rem;
+  flex: 1;
+  padding: 0.8rem 0;
+  border: none;
+  background: rgb(233, 112, 37);
+  border: 1px solid rgb(233, 112, 37);
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary-locked {
+  margin-top: 1rem;
+  flex: 1;
+  padding: 0.8rem 0;
+  border: none;
+  background: rgb(233, 112, 37);
+  border: 1px solid rgb(233, 112, 37);
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 10px;
+  cursor: not-allowed;
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: rgb(233, 112, 37);
+}
+
+.email-message-none {
+  display: none;
+}
+
+footer {
+  padding: 2rem 0;
+  text-align: center;
+  background: #444;
+}
+
+footer p {
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  from { transform: scale(0); }
+  to { transform: scale(1.3); }
+}
