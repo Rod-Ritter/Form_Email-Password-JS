@@ -16,6 +16,7 @@ const passwordRegex = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[\W_]).{8,32}/;
 const loginForm = document.querySelector("#loginForm");
 const submitButton = document.querySelector("#loginSubmit");
 let mailCheck;
+let passCheck;
 
 
 function emailError() {
@@ -36,11 +37,11 @@ function emailIsValid() {
     emailMessage.classList.remove("email-message");
     emailMessage.classList.add("email-message-none");
     emailFieldContainer.classList.add("form-email");
-    return true
+    return mailCheck = true;
   } else {
     emailField.classList.remove("email-valid");
     emailFieldContainer.classList.remove("form-email");
-    return false
+    return mailCheck = false;
   }
 }
 
@@ -53,13 +54,13 @@ function passwordIsValid() {
     passwordFieldContainer.classList.add("form-password");
     regularEye.classList.add("regular-eye-valid");
     slashEye.classList.add("slash-eye-valid");
-    return true;
+    return passCheck = true;
   } else {
     passwordField.classList.remove("password-valid");
     passwordFieldContainer.classList.remove("form-password");
     regularEye.classList.remove("regular-eye-valid");
     slashEye.classList.remove("slash-eye-valid");
-    return false;
+    return passCheck = false;
   }
 }
 
@@ -75,17 +76,17 @@ function passwordError() {
     return true;
   }
 }
+
 email.addEventListener("keyup", (e) => {
     if (emailIsValid()) {
       return mailCheck = true
     } else {
       email.addEventListener("change", (e) => {
         emailError();
+      return mailCheck = false
     });
     }
   });
-
-
 
 password.addEventListener("keyup", (e) => {
   if (passwordIsValid()) {
@@ -112,14 +113,23 @@ const passwordEyes = () => {
 
 passwordEyes();
 
-loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-});
+function loginFormIsValid() {
+  const inputs = document.querySelectorAll("input");
+  for(let i = 0; i < inputs.length; i++){
+  inputs[i].addEventListener("keyup", e => {
+    if (emailIsValid() && passwordIsValid()) {
+      submitButton.classList.remove("btn-primary-locked");
+      submitButton.classList.add("btn-primary");
+    } else {
+      submitButton.classList.add("btn-primary-locked");
+      submitButton.classList.remove("btn-primary");
+    }
+  });
+}
+}
 
-// function loginFormIsValid() {
-// }
+loginFormIsValid()
 
-// loginFormIsValid();
 
 
 
