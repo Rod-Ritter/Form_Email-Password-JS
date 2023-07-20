@@ -120,12 +120,17 @@ function loginFormIsValid() {
     if (emailIsValid() && passwordIsValid()) {
       submitButton.classList.remove("btn-primary-locked");
       submitButton.classList.add("btn-primary");
+      loginForm.removeEventListener("submit", (e))
     } else {
       submitButton.classList.add("btn-primary-locked");
       submitButton.classList.remove("btn-primary");
+      loginForm.addEventListener("submit", e => {
+        e.preventDefault()
+        e.stopPropagation()
+      })
     }
   });
-}
+}   
 }
 
 loginFormIsValid()
